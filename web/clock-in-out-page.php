@@ -1,13 +1,13 @@
 <?php
 session_start();
-if (isset($_SESSION['username']))
+if (isset($_SESSION['employee_name']))
 {
-	$username = $_SESSION['username'];
+	$username = $_SESSION['employee_name'];
 }
 else
 {
-	header("Location: team_activity07_signIn.php");
-	die(); // we always include a die after redirects.
+	header("Location: homepage.php");
+	die(); 
 }
 ?>
 
@@ -20,9 +20,14 @@ else
 <body>
 <div>
 
-	<h1>Welcome to the homepage!</h1>
+<br /><br /><br />
+<p>
+	<?php 
+	echo 'Todays date and current time is ' . date("l, F jS Y h:i:s A");
+    ?>
+</p>
 
-	Your username is: <?= $username ?><br /><br />
+	Your name is: <?= $username ?><br /><br />
 
 	<a href="team_activity07_signOut.php">Sign Out</a>
 </div>

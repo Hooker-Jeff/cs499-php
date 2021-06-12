@@ -2,13 +2,13 @@
 
 session_start();
 $badLogin = false;
-if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
+if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
-	$username = $_POST['txtUser'];
-	$password = $_POST['txtPassword'];
+	$username = $_POST['employee_id'];
+	$password = $_POST['employee_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT password FROM login WHERE username=:username';
+	$query = 'SELECT password FROM employee WHERE username=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$result = $statement->execute();
@@ -19,7 +19,7 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			$_SESSION['username'] = $username;
-			header("Location: homepage.php");
+			header("Location: clock-in-out-page.php");
 			die(); 
 		}
 		else
@@ -54,12 +54,12 @@ if ($badLogin)
 
 <form id="mainForm" action="homepage.php" method="POST">
 
-	<input type="text" id="txtUser" name="txtUser" placeholder="Employee ID">
-	<label for="txtUser">Employee ID</label>
+	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
+	<label for="employee_id">Employee ID</label>
 	<br /><br />
 
-	<input type="password" id="txtPassword" name="txtPassword" placeholder="Password">
-	<label for="txtPassword">Password</label>
+	<input type="password" id="employee_password" name="employee_password" placeholder="Password">
+	<label for="employee_password">Password</label>
 	<br /><br />
 
 	<input type="submit" value="Sign In" />
