@@ -8,7 +8,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$password = $_POST['employee_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT employee_password FROM employee WHERE employee_id=:employee_id';
+	$query = 'SELECT employee_password FROM employee WHERE employee_id=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':employee_id', $username);
 	$result = $statement->execute();
@@ -52,7 +52,7 @@ if ($badLogin)
 
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="clock-in-out-page.php" method="POST">
+<form id="mainForm" action="homepage.php" method="POST">
 
 	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
 	<label for="employee_id">Employee ID</label>
