@@ -5,7 +5,7 @@
 	
 	try {
 		
-		$dbUrl = getenv('HEROKU_POSTGRESQL_ONYX_URL');
+		$dbUrl = getenv('HEROKU_POSTGRESQL_COPPER_URL');
 		$dbopts = parse_url($dbUrl);
 		$dbHost = $dbopts["host"];
 		$dbPort = $dbopts["port"];
