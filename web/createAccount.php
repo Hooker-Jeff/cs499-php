@@ -6,7 +6,7 @@ $name = $_POST['employee_name'];
 if (!isset($employee_id) || $employee_id == ""
 	|| !isset($employee_password) || $employee_password == "")
 {
-	header("Location: signUp.php");
+	header("Location: homepage.php");
 	die(); 
 }
 
@@ -20,6 +20,6 @@ $statement->bindValue(':employee_id', $employee_id);
 $statement->bindValue(':employee_name', $employee_name);
 $statement->bindValue(':employee_password', $hashedemployee_password);
 $statement->execute();
-header("Location: signIn.php");
+header("Location: homepage.php");
 die(); 
 ?>
