@@ -6,7 +6,7 @@ if (isset($_SESSION['employee_name']))
 }
 else
 {
-	header("Location: homepage.php");
+	//header("Location: homepage.php");
 	die(); 
 }
 ?>
