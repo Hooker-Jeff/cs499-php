@@ -10,7 +10,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$db = get_db();
 	$query = 'SELECT employee_password FROM employee WHERE employee_id=:username';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':employee_id', $username);
+	$statement->bindValue(':username', $username);
 	$result = $statement->execute();
 	if ($result)
 	{
@@ -18,7 +18,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		$hashedPasswordFromDB = $row['employee_password'];
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
-			$_SESSION['employee_id'] = $username;
+			$_SESSION['username'] = $username;
 			header("Location: clock-in-out-page.php");
 			die(); 
 		}
