@@ -4,10 +4,8 @@ session_start();
 $badLogin = false;
 if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 {
-	// they have submitted a username and password for us to check
 	$username = $_POST['txtUser'];
 	$password = $_POST['txtPassword'];
-	// Connect to the DB
 	require("dbConnect.php");
 	$db = get_db();
 	$query = 'SELECT password FROM login WHERE username=:username';
@@ -18,13 +16,11 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 	{
 		$row = $statement->fetch();
 		$hashedPasswordFromDB = $row['password'];
-		// now check to see if the hashed password matches
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
-			// password was correct, put the user on the session, and redirect to home
 			$_SESSION['username'] = $username;
-			header("Location: team_activity07_homepage.php");
-			die(); // we always include a die after redirects.
+			header("Location: homepage.php");
+			die(); 
 		}
 		else
 		{
@@ -36,8 +32,6 @@ if (isset($_POST['txtUser']) && isset($_POST['txtPassword']))
 		$badLogin = true;
 	}
 }
-// If we get to this point without having redirected, then it means they
-// should just see the login form.
 ?>
 
 <!DOCTYPE html>
