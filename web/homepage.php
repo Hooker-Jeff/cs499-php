@@ -73,9 +73,6 @@ if ($badLogin)
 </form>
 
 <br /><br />
-
-Or <a href="team_activity07_signUp.php">Sign up</a> for a new account.
-
 </div>
 
 </body>
