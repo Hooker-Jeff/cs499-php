@@ -1,12 +1,12 @@
 <?php
 session_start();
-if (isset($_SESSION['employee_name']))
+if (isset($_SESSION['username']))
 {
-	$username = $_SESSION['employee_name'];
+	$username = $_SESSION['username'];
 }
 else
 {
-	//header("Location: homepage.php");
+	header("Location: homepage.php");
 	die(); 
 }
 ?>
@@ -27,7 +27,7 @@ else
     ?>
 </p>
 
-	Your name is: <?= $username ?><br /><br />
+	Welcome  <?= $username ?><br /><br />
 
 	<a href="team_activity07_signOut.php">Sign Out</a>
 </div>
