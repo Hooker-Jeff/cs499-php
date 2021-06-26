@@ -8,7 +8,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$password = $_POST['employee_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT password FROM naf_employee WHERE username=:username';
+	$query = 'SELECT password FROM  WHERE username=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':employee_id', $username);
 	$result = $statement->execute();
@@ -18,7 +18,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		$hashedPasswordFromDB = $row['employee_password'];
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
-			$_SESSION['employee_id'] = $username;
+			$_SESSION['username'] = $username;
 			header("Location: clock-in-out-page.php");
 			die(); 
 		}
