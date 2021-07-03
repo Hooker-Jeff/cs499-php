@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$badLogin = false;
+//$badLogin = false;
 if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset($_POST['employee_name'])
 {
 	$id = $_POST['employee_id'];
@@ -25,7 +25,9 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	}
 	else
 	{
-		$badLogin = true;
+		//$badLogin = true;
+		header("Location: homepage.php");
+		die();
 	}
 }
 else
