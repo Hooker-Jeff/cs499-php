@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION['username']) && isset($_SESSION['name']))
+if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
-	$name = $_SESSION['name'];
+	$name = $_REQUEST['employee_name'];
 }
 else
 {
