@@ -32,6 +32,7 @@
 
 </form>
 
+	</br></br><a href="homepage.php">Return to homepage</a></br></br>
 
 </div>
 
