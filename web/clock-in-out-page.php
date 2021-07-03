@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username']) && isset($_SESSION['employee_name']))
+if (isset($_SESSION['username']) && isset($_SESSION['name']))
 {
 	$username = $_SESSION['username'];
 	$name = $_SESSION['name'];
