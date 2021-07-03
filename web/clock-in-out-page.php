@@ -33,7 +33,7 @@ else
     ?>
 </p>
 
-	Welcome  <?echo $REQUEST['employee_name'];?><br /><br />
+	Welcome  <?echo $_POST['employee_name']; ?><br /><br />
 	
 	
 
