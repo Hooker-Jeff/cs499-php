@@ -36,7 +36,8 @@ else
 <br /><br /><br />
 <p>
 	<?php 
-	echo 'Todays date and current time is ' . date("l, F jS Y h+17:i:s A");
+	date_default_timezone_set(America/Los_Angeles);
+	echo 'Todays date and current time is ' . date("l, F jS Y h:i:s A");
     ?>
 </p>
 
