@@ -2,7 +2,7 @@
 
 session_start();
 $badLogin = false;
-if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
+if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset($_POST['employee_name']))
 {
 	$username = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
@@ -64,7 +64,6 @@ if ($badLogin)
 	<br /><br />
 
 	<input type="hidden" id="employee_name" name="employee_name" value="$name">
-	<br /><br />
 
 	<input type="submit" value="Sign In" />
 
