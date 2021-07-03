@@ -36,7 +36,9 @@ else
 
 	Welcome  <?= $name ?><br /><br />
 	
-	Please clock in or clock out with the buttons below
+	Please clock in or clock out with the buttons below:
+	
+	
 	
 	
 
