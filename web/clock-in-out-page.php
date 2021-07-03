@@ -36,7 +36,7 @@ else
 	
 	
 
-	<a href="team_activity07_signOut.php">Sign Out</a>
+	<a href="homepage.php">Sign Out</a>
 </div>
 
 </body>
