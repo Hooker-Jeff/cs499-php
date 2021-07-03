@@ -1,8 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION['username']))
+if (isset($_SESSION['username'] AND isset($_SESSION['name']))
 {
 	$username = $_SESSION['username'];
+	$name = $_SESSION['name'];
 }
 else
 {
@@ -33,6 +34,8 @@ else
 </p>
 
 	Welcome  <?= $name ?><br /><br />
+	
+	Please clock in or clock out with the buttons below
 	
 	
 
