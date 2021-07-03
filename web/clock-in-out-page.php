@@ -34,7 +34,7 @@ else
     ?>
 </p>
 
-	Welcome <?= $name?>.  Your employee ID number is: <?= $username ?> <br /> Please either clock in or clock out with the buttons below<br /><br />
+	Welcome employee number <?= $username ?> <br /><br /> Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockin.php" method="POST">
 
