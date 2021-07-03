@@ -35,9 +35,25 @@ else
 
 	Welcome.  Please either clock in or clock out with the buttons below<br /><br />
 	
+	<form id="ClockInForm" action="clockin.php" method="POST">
+
+	add form to clock in 
+
+	<input type="submit" value="Clock In" />
+
+	</form> 
+	
+	<form id="ClockOutForm" action="clockin.php" method="POST">
+
+	add form to clock out
+
+	<input type="submit" value="Clock Out" />
+
+	</form> 
+	
 	
 
-	<a href="homepage.php">Sign Out</a>
+	<br /><br /><a href="homepage.php">Sign Out</a>
 </div>
 
 </body>
