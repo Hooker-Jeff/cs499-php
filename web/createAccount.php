@@ -11,8 +11,8 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	$query = 'INSERT INTO naf_employee VALUES (:id, :password, :name)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':id', $id);
-	$statement->bindValue(':name', $name);
 	$statement->bindValue(':password', $password);
+	$statement->bindValue(':name', $name);
 	$statement->execute();
 	header("Location: homepage.php");
 	die(); 

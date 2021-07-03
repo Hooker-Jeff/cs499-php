@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION['username']) && isset($_SESSION['name']))
+if (isset($_SESSION['username'])) //&& isset($_SESSION['name']))
 {
 	$username = $_SESSION['username'];
-	$name = $_SESSION['name'];
+	//$name = $_SESSION['name'];
 }
 else
 {
@@ -44,7 +44,7 @@ else
 
 	</form> 
 	
-	<form id="ClockOutForm" action="clockin.php" method="POST">
+	<form id="ClockOutForm" action="clockout.php" method="POST">
 
 	add form to clock out
 
