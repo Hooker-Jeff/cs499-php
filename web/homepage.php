@@ -10,27 +10,20 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$db = get_db();
 	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':employee_id', $username);
+	$statement->bindValue(':username', $username);
+	$statement->bindValue(':password', $password);
 	$result = $statement->execute();
 	if ($result)
 	{
-		$row = $statement->fetch();
-		$hashedPasswordFromDB = $row['employee_password'];
-		if (password_verify($password, $hashedPasswordFromDB))
-		{
-			$_SESSION['username'] = $username;
-			header("Location: clock-in-out-page.php");
-			die(); 
-		}
-		else
-		{
-			$badLogin = true;
-		}
+		$_SESSION['username'] = $username;
+		header("Location: clock-in-out-page.php");
+		die(); 
 	}
 	else
 	{
 		$badLogin = true;
 	}
+	
 }
 ?>
 
