@@ -32,7 +32,7 @@ else
     ?>
 </p>
 
-	Welcome  <?= $username ?><br /><br />
+	Welcome  <?= $name ?><br /><br />
 	
 	
 

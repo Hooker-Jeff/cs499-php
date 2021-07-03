@@ -6,16 +6,19 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
 	$username = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
+	$name = $_POST['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
 	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$statement->bindValue(':password', $password);
+	$statement->bindValue(':name', $name);
 	$result = $statement->execute();
 	if ($result)
 	{
 		$_SESSION['username'] = $username;
+		$_SESSION['name'] = $employee_name;
 		header("Location: clock-in-out-page.php");
 		die(); 
 	}
