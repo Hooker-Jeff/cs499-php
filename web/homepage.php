@@ -65,7 +65,7 @@ if ($badLogin)
 
 	
 	<?php
-    echo '<input type="hidden" value="' . htmlspecialchars($name) . '" />'";
+    echo '<input type="hidden" value="' . htmlspecialchars($name) . '" />';
 	?>
 
 
