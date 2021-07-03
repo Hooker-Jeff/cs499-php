@@ -1,10 +1,16 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])
-	if (isset($_SESSION['name']))
+if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
-	$name = $_SESSION['name'];
+	$name = $_POST['employee_name'];
+	require("dbConnect.php");
+	$db = get_db();
+	$query = 'SELECT :name FROM naf_employee WHERE employee_id=:username';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':username', $username);
+	$statement->bindValue(':name', $name);
+	$result = $statement->execute();
 }
 else
 {
@@ -35,10 +41,6 @@ else
 </p>
 
 	Welcome  <?= $name ?><br /><br />
-	
-	Please clock in or clock out with the buttons below:
-	
-	
 	
 	
 
