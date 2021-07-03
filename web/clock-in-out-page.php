@@ -3,6 +3,15 @@ session_start();
 if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
+	
+	$name = $_POST['employee_name'];
+	require("dbConnect.php");
+	$db = get_db();
+	$query = 'SELECT name FROM naf_employee WHERE username=:username';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':name', $name);
+	$result = $statement->execute();
+	
 }
 else
 {
@@ -33,7 +42,7 @@ else
     ?>
 </p>
 
-	Welcome  <?echo $_POST['employee_name']; ?><br /><br />
+	Welcome  <?echo $name; ?><br /><br />
 	
 	
 
