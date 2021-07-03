@@ -63,6 +63,9 @@ if ($badLogin)
 	<label for="employee_password">Password</label>
 	<br /><br />
 
+	<input type="hidden" id="employee_name" name="employee_name" value="$name">
+	<br /><br />
+
 	<input type="submit" value="Sign In" />
 
 </form>
