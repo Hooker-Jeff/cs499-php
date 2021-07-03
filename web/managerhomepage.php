@@ -68,9 +68,14 @@ if ($badLogin)
 	<br /><br />
 
 	<input type="submit" value="Sign In" />
+	
+	
 
 </form>
 
+
+
+	</br></br><a href="homepage.php">Return to homepage</a></br></br>
 
 <br /><br />
 
