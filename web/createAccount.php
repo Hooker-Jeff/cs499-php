@@ -13,10 +13,14 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	$statement->bindValue(':id', $id);
 	$statement->bindValue(':password', $password);
 	$statement->bindValue(':name', $name);
-	$statement->execute();
-	header("Location: homepage.php");
-	die(); 
-	
+	$result = $statement->execute();
+	if ($result)
+	{
+		$_SESSION['username'] = $username;
+		//$_SESSION['employee_name'] = $name;
+		header("Location: clock-in-out-page.php");
+		die(); 
+	}
 }
 else
 {
