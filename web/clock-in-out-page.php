@@ -1,6 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['username']))
+	if (isset($_SESSION['name']))
 {
 	$username = $_SESSION['username'];
 	$name = $_SESSION['employee_name'];
@@ -36,7 +37,7 @@ else
 <br /><br /><br />
 <p>
 	<?php 
-	date_default_timezone_set(America/Los_Angeles);
+	date_default_timezone_set("America/Los_Angeles");
 	echo 'Todays date and current time is ' . date("l, F jS Y h:i:s A");
     ?>
 </p>
