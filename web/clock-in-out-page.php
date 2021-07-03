@@ -34,7 +34,7 @@ else
     ?>
 </p>
 
-	Welcome <?php$name?>.  Please either clock in or clock out with the buttons below<br /><br />
+	Welcome <?php echo $name?>.  Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockin.php" method="POST">
 
