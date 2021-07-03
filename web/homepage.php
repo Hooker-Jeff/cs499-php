@@ -9,7 +9,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	$name = $_POST['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username AND employee_name=:name';
+	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$statement->bindValue(':password', $password);
@@ -63,7 +63,11 @@ if ($badLogin)
 	<label for="employee_password">Password</label>
 	<br /><br />
 
-	<input type="hidden" id="employee_name" name="employee_name" value="<?php echo $employee_name;?>">
+	
+	<?php
+    echo '<input type="hidden" value="' . htmlspecialchars($name) . '" />'";
+	?>
+
 
 	<input type="submit" value="Sign In" />
 
