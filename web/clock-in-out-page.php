@@ -6,7 +6,7 @@ if (isset($_SESSION['username']))
 }
 else
 {
-	//header("Location: homepage.php");
+	header("Location: homepage.php");
 	die(); 
 }
 ?>
@@ -14,7 +14,12 @@ else
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home Page</title>
+	<title>Clock in or clock out</title>
+	<style>
+	    * {
+		  text-align: center;
+		}
+	</style>
 </head>
 
 <body>

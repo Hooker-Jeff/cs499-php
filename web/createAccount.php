@@ -14,7 +14,7 @@ $employee_id = htmlspecialchars($employee_id);
 $hashedemployee_password = employee_password_hash($employee_password, employee_password_DEFAULT);
 require("dbConnect.php");
 $db = get_db();
-$query = 'INSERT INTO employee(employee_id, employee_password, employee_name) VALUES(:employee_id, :employee_password, :employee_name)';
+$query = 'INSERT INTO naf_employee(employee_id, employee_password, employee_name) VALUES(:employee_id, :employee_password, :employee_name)';
 $statement = $db->prepare($query);
 $statement->bindValue(':employee_id', $employee_id);
 $statement->bindValue(':employee_name', $employee_name);
