@@ -1,7 +1,7 @@
 <?php
 
-session_start();
-$badLogin = false;
+//session_start();
+//$badLogin = false;
 if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
 	$username = $_POST['employee_id'];
@@ -19,20 +19,20 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$result = $statement->execute();
 	if ($result)
 	{
-		$row = $statement->fetch();
+		/*$row = $statement->fetch();
 		$hashedPasswordFromDB = $row['password'];
 		// now check to see if the hashed password matches
 		if (password_verify($password, $hashedPasswordFromDB))
-		{
+		{*/
 			$_SESSION['username'] = $username;
 			//$_SESSION['employee_name'] = $name;
 			header("Location: clock-in-out-page.php");
 			die(); 
 		}
-		else
+		/*else
 		{
 			$badLogin = true;
-		}
+		}*/
 	}
 	
 	else
