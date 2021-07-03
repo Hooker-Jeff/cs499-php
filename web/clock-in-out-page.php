@@ -28,6 +28,8 @@ else
 </p>
 
 	Welcome  <?= $username ?><br /><br />
+	
+	
 
 	<a href="team_activity07_signOut.php">Sign Out</a>
 </div>

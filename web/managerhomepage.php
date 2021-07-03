@@ -37,7 +37,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sign In</title>
+	<title>Manager Sign In</title>
 	<style>
 	    * {
 		  text-align: center;
@@ -55,16 +55,16 @@ if ($badLogin)
 }
 ?>
 
-<h1>Please sign in below:</h1>
+<h1>Please sign in below with your manager credentials:</h1>
 
-<form id="mainForm" action="homepage.php" method="POST">
+<form id="mainForm" action="managerhomepage.php" method="POST">
 
-	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
-	<label for="employee_id">Employee ID</label>
+	<input type="text" id="manager_id" name="manager_id" placeholder="Manager ID">
+	<label for="manager_id">Manager ID</label>
 	<br /><br />
 
-	<input type="password" id="employee_password" name="employee_password" placeholder="Password">
-	<label for="employee_password">Password</label>
+	<input type="password" id="manager_password" name="manager_password" placeholder="Password">
+	<label for="manager_password">Password</label>
 	<br /><br />
 
 	<input type="submit" value="Sign In" />
@@ -73,10 +73,6 @@ if ($badLogin)
 
 
 <br /><br />
-
-Or <a href="signUp.php">Sign up</a> for a new account.
-
-</br></br><a href="managerhomepage.php">Manager login page</a></br></br>
 
 </div>
 

@@ -16,6 +16,11 @@
 <html>
 <head>
 	<title>Sign Up</title>
+	<style>
+	    * {
+		  text-align: center;
+		}
+	</style>
 </head>
 
 <body>
