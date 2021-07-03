@@ -9,31 +9,24 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$name = $_POST['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
+	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username UNION SELECT :name FROM naf_employee WHERE employee_id=:username ';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$statement->bindValue(':password', $password);
+	$statement->bindValue(':name', $name);
 	$result = $statement->execute();
 	if ($result)
 	{
 		$_SESSION['username'] = $username;
+		$_SESSION['name'] = $name;
+		header("Location: clock-in-out-page.php");
 		die(); 
 	}
 	else
 	{
 		$badLogin = true;
 	}
-	
-	$query = 'SELECT :name FROM naf_employee WHERE employee_id=:username';
-	$statement = $db->prepare($query);
-	$statement->bindValue(':name', $name);
-	$result = $statement->execute();
-	if ($result)
-	{
-		$_SESSION['name'] = $name;
-		header("Location: clock-in-out-page.php");
-		die(); 
-	}
+
 	
 }
 ?>
