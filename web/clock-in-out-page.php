@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
-	$name = $_POST['employee_name'];
+	$name = $_SESSION['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
 	$query = 'SELECT :name FROM naf_employee WHERE employee_id=:username';
@@ -36,7 +36,7 @@ else
 <br /><br /><br />
 <p>
 	<?php 
-	echo 'Todays date and current time is ' . date("l, F jS Y h:i:s A");
+	echo 'Todays date and current time is ' . date("l, F jS Y h+17:i:s A");
     ?>
 </p>
 
