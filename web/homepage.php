@@ -63,7 +63,7 @@ if ($badLogin)
 	<label for="employee_password">Password</label>
 	<br /><br />
 
-	<input type="text" id="employee_name" name="employee_name" value="<?php echo htmlspecialchars($name);?>">
+	<input type="hidden" id="employee_name" name="employee_name" value="<?php echo htmlspecialchars($name);?>">
 
 	<input type="submit" value="Sign In" />
 
