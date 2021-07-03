@@ -2,11 +2,11 @@
 
 session_start();
 $badLogin = false;
-if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset($_POST['employee_name']))
+if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
 	$username = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
-	$name = $_POST['employee_name'];
+	$name = $_GET['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
 	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
@@ -62,12 +62,6 @@ if ($badLogin)
 	<input type="password" id="employee_password" name="employee_password" placeholder="Password">
 	<label for="employee_password">Password</label>
 	<br /><br />
-
-	
-	<?php
-    echo '<input type="hidden" value="' . htmlspecialchars($name) . '" />';
-	?>
-
 
 	<input type="submit" value="Sign In" />
 
