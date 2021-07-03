@@ -6,7 +6,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
 	$username = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
-	$name = $_GET['employee_name'];
+	$name = $_REQUEST['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
 	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username';
