@@ -6,14 +6,17 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 {
 	$username = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
-	$name = $_POST['employee_name'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username UNION SELECT :name FROM naf_employee WHERE employee_id=:username ';
+	
+	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username 
+			  UNION 
+			  SELECT employee_name FROM naf_employee WHERE employee_id=:username ';
+			  
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	$statement->bindValue(':password', $password);
-	$statement->bindValue(':name', $name);
+	$statement->bindValue('employee_name', $name);
 	$result = $statement->execute();
 	if ($result)
 	{
