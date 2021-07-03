@@ -3,18 +3,6 @@ session_start();
 if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
-	$name = $_POST['employee_name'];
-	require("dbConnect.php");
-	$db = get_db();
-	$query = 'SELECT :name FROM naf_employee WHERE employee_id=:username';
-	$statement = $db->prepare($query);
-	$statement->bindValue(':username', $username);
-	$statement->bindValue(':name', $name);
-	$result = $statement->execute();
-	if ($result)
-	{
-		$_SESSION['name'] = $employee_name;
-	}
 }
 else
 {
@@ -40,6 +28,19 @@ else
 <br /><br /><br />
 <p>
 	<?php 
+	
+	$name = $_POST['employee_name'];
+	require("dbConnect.php");
+	$db = get_db();
+	$query = 'SELECT :name FROM naf_employee WHERE employee_id=:username';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':name', $name);
+	$result = $statement->execute();
+	if ($result)
+	{
+		$_SESSION['name'] = $employee_name;
+	}
+	
 	date_default_timezone_set("America/Los_Angeles");
 	echo 'Todays date and current time is ' . date("l, F jS Y h:i:s A");
     ?>
