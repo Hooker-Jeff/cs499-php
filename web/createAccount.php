@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+$badLogin = false;
 if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset($_POST['employee_name'])
 {
 	$id = $_POST['employee_id'];
@@ -16,10 +18,14 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	$result = $statement->execute();
 	if ($result)
 	{
-		$_SESSION['username'] = $username;
+		//$_SESSION['username'] = $username;
 		//$_SESSION['employee_name'] = $name;
-		header("Location: clock-in-out-page.php");
+		header("Location: homepage.php");
 		die(); 
+	}
+	else
+	{
+		$badLogin = true;
 	}
 }
 else
