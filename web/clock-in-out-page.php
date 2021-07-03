@@ -3,6 +3,7 @@ session_start();
 if (isset($_SESSION['username']))
 {
 	$username = $_SESSION['username'];
+	$name = $_SESSION['name'];
 }
 else
 {
@@ -33,7 +34,7 @@ else
     ?>
 </p>
 
-	Welcome.  Please either clock in or clock out with the buttons below<br /><br />
+	Welcome <?php echo $_POST["name"]; ?>.  Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockin.php" method="POST">
 
