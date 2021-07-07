@@ -22,6 +22,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 	<head>
 	<title>Select Employee</title> 
+	<style>
+	    * {
+		  text-align: center;
+		}
+	</style>
 	</head>
 
 	<body>
@@ -42,12 +47,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  }
 	  
 	  ?>
-	  <li><p><a href='newCharacter.php'>Add a new Character</a></p></li>
 	  
 	  </ul>
-	  
-	  
-	  </br></br><a href="inventoryhomepage.php">Inventory Manager page</a></br></br>
 	  
 	  
 	  
