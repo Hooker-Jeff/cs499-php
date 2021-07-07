@@ -42,8 +42,8 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  foreach($rows as $employee)
 	  {
 		  $id = $employee['employee_id'];
-		  $char_name = $employee['employee_name'];
-		  echo "<li><p><a href='dndatabase.php?employee_id=$id'>$employee_name</a></p></li>";
+		  $employee_name = $employee['employee_name'];
+		  echo "<li><p><a href='employeetime.php?employee_id=$id'>$employee_name</a></p></li>";
 	  }
 	  
 	  ?>
