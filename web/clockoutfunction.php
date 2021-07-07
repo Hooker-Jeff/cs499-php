@@ -1,6 +1,6 @@
 <?php
 
-$emp_id = $_POST['emp_id'];
+$username = $_SESSION['username'];
 $clock_in = $_POST['clock_in'];
 
 require("dbConnect.php");
@@ -8,12 +8,12 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO timeclock (emp_id, clock_in) VALUES(:emp_id, :clock_in)';
+	$query = 'INSERT INTO timeclock (emp_id, clock_in) VALUES(:username, :clock_in)';
 
 	$statement = $db->prepare($query);
 	
 	
-	$statement->bindValue(':emp_id', $emp_id);
+	$statement->bindValue(':username', $username);
 	$statement->bindValue(':clock_in', $clock_in);
 	
 	$statement->execute();

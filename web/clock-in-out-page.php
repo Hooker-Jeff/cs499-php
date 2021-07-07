@@ -37,18 +37,19 @@ else
 	Welcome employee number <?= $username ?> <br /><br /> Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockinfunction.php" method="POST">
-
+	<input type="hidden" id="clock_in" name="clock_in" value="timestamp">
 	
 
-	<input type="submit" value="Clock In" />
+	<button type="submit" value="Clock In" />
 
 	</form> 
 	
 	<form id="ClockOutForm" action="clockoutfunction.php" method="POST">
+	<input type="hidden" id="clock_out" name="clock_out" value="timestamp">
 
 	
 
-	<input type="submit" value="Clock Out" />
+	<button type="submit" value="Clock Out" />
 
 	</form> 
 	
