@@ -37,7 +37,7 @@ else
 	Welcome employee number <?= $username ?> <br /><br /> Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockinfunction.php" method="POST">
-	<input type="hidden" id="clock_in" name="clock_in" value="timestamp">
+	<input type="hidden" id="clock_in" name="clock_in" value="<?php date_default_timezone_set("America/Los_Angeles");	echo date("l, F jS Y h:i:s A");?>">
 	
 
 	<input type="submit" value="Clock In" />
@@ -45,7 +45,7 @@ else
 	</form> 
 	
 	<form id="ClockOutForm" action="clockoutfunction.php" method="POST">
-	<input type="hidden" id="clock_out" name="clock_out" value="timestamp">
+	<input type="hidden" id="clock_out" name="clock_out" value="<?php date_default_timezone_set("America/Los_Angeles");	echo date("l, F jS Y h:i:s A");?>">
 
 	
 
