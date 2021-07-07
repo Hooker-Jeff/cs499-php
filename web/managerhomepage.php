@@ -19,7 +19,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			$_SESSION['username'] = $username;
-			header("Location: clock-in-out-page.php");
+			header("Location: employee-select-page.php");
 			die(); 
 		}
 		else
