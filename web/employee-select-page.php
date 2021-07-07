@@ -36,6 +36,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  
 	  <ul>
+	<style>
+	    * {
+		  text-align: center;
+		}
+	</style>
 	  
 	  <?php
 	  
@@ -49,6 +54,11 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  ?>
 	  
 	  </ul>
+	  
+	  <br/><br/>
+	  <form method="post" action="homepage.php">
+			<input type="submit" value="Return to Homepage">
+		</form>
 	  
 	  
 	  

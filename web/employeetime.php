@@ -52,24 +52,12 @@ $employee_name = $employee['employee_name'];
 		foreach ($rows as $row)
 		{
 			echo '<h1> Employee Time info for ' . $row['employee_name'] . '</h1><br/>';
-			echo '<table style="width:100%" ><tr><th>Character Name</th>';
-			echo '<th>Player Name</th>';
-			echo '<th>Race</th>';
-			echo '<th>Class</th>';
-			echo '<th>Alignment</th>';
-			echo '<th>Level</th>';
-			echo '<th>Experience points</th>';
-			echo '<th>Maximum HP</th>';
-			echo '<th>Current HP</th></tr>';
-			echo '<tr><td>' . $row['character_name'] . '</td>';
-			echo '<td>' . $row['player_name'] . '</td>';
-			echo '<td>' . $row['race_name'] . '</td>';
-			echo '<td>' . $row['class_name'] . '</td>';
-			echo '<td>' . $row['alignment_name'] . '</td>';
-			echo '<td>' . $row['char_level'] . '</td>';
-			echo '<td>' . $row['xp'] . '</td>';
-			echo '<td>' . $row['hp_max'] . '</td>';
-			echo '<td>' . $row['hp_current'] . '</td></tr></table><br/><br/>';
+			echo '<table style="width:50%" ><tr><th>Employee Name</th>';
+			echo '<tr><th>Clock In</th>';
+			echo '<th>Clock Out</th></tr>';
+			echo '<tr><td>' . $row['employee_name'] . '</td>';
+			echo '<td>' . $row['clock_in'] . '</td>';
+			echo '<td>' . $row['clock_out'] . '</td></tr></table><br/><br/>';
 			
 			
 			
