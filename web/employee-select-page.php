@@ -36,11 +36,6 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  
 	  <ul>
-	<style>
-	    * {
-		  text-align: center;
-		}
-	</style>
 	  
 	  <?php
 	  
@@ -48,7 +43,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  {
 		  $id = $employee['employee_id'];
 		  $employee_name = $employee['employee_name'];
-		  echo "<li><p><a href='employeetime.php?employee_id=$id'>$employee_name</a></p></li>";
+		  echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
 	  }
 	  
 	  ?>

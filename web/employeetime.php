@@ -13,10 +13,10 @@ require("dbConnect.php");
 $db = get_db();
 
 
-$query='SELECT * FROM timeclock WHERE t_emp_id = :id';
+$query='SELECT * FROM timeclock WHERE emp_id = :employee_id';
 
 $stmt = $db->prepare($query);
-$stmt->bindValue(':id', $employee_id, PDO::PARAM_INT);
+$stmt->bindValue(':employee_id', $employee_id, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -31,7 +31,7 @@ $employee_name = $employee['employee_name'];
 <html>
 
 	<head>
-	<title>D&D Database</title>
+	<title>Employee Timeclock Database</title>
 	<style>
 	    * {
 		  text-align: center;
