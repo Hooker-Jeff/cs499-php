@@ -40,7 +40,7 @@ else
 	<input type="hidden" id="clock_in" name="clock_in" value="timestamp">
 	
 
-	<button type="submit" value="Clock In" />
+	<input type="submit" value="Clock In" />
 
 	</form> 
 	
@@ -49,7 +49,7 @@ else
 
 	
 
-	<button type="submit" value="Clock Out" />
+	<input type="submit" value="Clock Out" />
 
 	</form> 
 	
