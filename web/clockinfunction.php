@@ -8,7 +8,7 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO timeclock (emp_id, clock_out) VALUES (:username, :clock_in)';
+	$query = 'INSERT INTO timeclock (emp_id, clock_in) VALUES (:username, :clock_in)';
 
 	$statement = $db->prepare($query);
 	
