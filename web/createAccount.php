@@ -24,11 +24,11 @@ try{
 	statement->execute();
 	
 }
-catch (Exception $ex)
+/*catch (Exception $ex)
 {
 	echo "Error with DB. Details: $ex";
 	die();
-}
+}*/
 header("Location: homepage.php");
 die();
 
