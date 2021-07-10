@@ -8,7 +8,7 @@ $db = get_db();
 
 try
 {
-	$query = 'INSERT INTO timeclock (emp_id, clock_out) VALUES(:username, :clock_out)';
+	$query = 'INSERT INTO timeclock (emp_id, clock_out) VALUES (:username, :clock_out)';
 
 	$statement = $db->prepare($query);
 	
@@ -18,7 +18,7 @@ try
 	
 	$statement->execute();
 	
-	$emp_id = $db->lastInsertId();
+	//$emp_id = $db->lastInsertId();
 	
 	
 }
