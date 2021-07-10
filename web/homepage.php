@@ -20,7 +20,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	if ($result)
 	{
 		//$row = $statement->fetch();
-		$hashedPasswordFromDB = password_hash($password);
+		$hashedPasswordFromDB = password_hash(':password');
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			$_SESSION['username'] = $username;
