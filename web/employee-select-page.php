@@ -41,7 +41,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  foreach($rows as $employee)
 	  {
-		  $id = $employee['employee_id'];
+		  $employee_id = $employee['employee_id'];
 		  $employee_name = $employee['employee_name'];
 		  echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
 	  }
