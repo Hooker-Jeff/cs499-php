@@ -20,8 +20,8 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	if ($result)
 	{
 		//$row = $statement->fetch();
-		$hashedPasswordFromDB = password_hash($password, PASSWORD_DEFAULT);
-		if (password_verify($password, $hashedPasswordFromDB))
+		$hashedPassword = password_hash($password);
+		if (password_verify($password, $hashedPassword))
 		{
 			$_SESSION['username'] = $username;
 			header("Location: clock-in-out-page.php");
