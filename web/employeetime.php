@@ -13,14 +13,16 @@ require("dbConnect.php");
 $db = get_db();
 
 
-$query='SELECT * FROM timeclock WHERE emp_id = :employee_id';
+$query='SELECT * FROM naf_employee n
+JOIN timeclock t ON n.employee_id = t.emp_id
+WHERE n.employee_id = :employee_id';
 
 $stmt = $db->prepare($query);
 $stmt->bindValue(':employee_id', $employee_id, PDO::PARAM_INT);
 $stmt->execute();
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$employee_name = $employee['employee_name'];
+$employee_name = $naf_employee['employee_name'];
 
 
 
@@ -53,7 +55,7 @@ $employee_name = $employee['employee_name'];
 		{
 			echo '<h1> Employee Time info for ' . $row['employee_name'] . '</h1><br/>';
 			echo '<table style="width:50%" ><tr><th>Employee Name</th>';
-			echo '<tr><th>Clock In</th>';
+			echo '<th>Clock In</th>';
 			echo '<th>Clock Out</th></tr>';
 			echo '<tr><td>' . $row['employee_name'] . '</td>';
 			echo '<td>' . $row['clock_in'] . '</td>';
