@@ -63,12 +63,11 @@ $employee_name = $naf_employee['employee_name'];
 			echo '<th>Clock Out</th></tr>';*/
 			echo '<tr><td>' . $row['employee_name'] . '</td>';
 			echo '<td>' . $row['clock_in'] . '</td>';
-			echo '<td>' . $row['clock_out'] . '</td></tr></table><br/><br/>';
-			
-			
-			
-			echo '<br/><br/><br/>';
+			echo '<td>' . $row['clock_out'] . '</td></tr>';
+						
 		}
+			echo '</table><br/><br/>';
+			echo '<br/><br/><br/>';
 		
 		?>
 		<form method="post" action="employee-select-page.php">
