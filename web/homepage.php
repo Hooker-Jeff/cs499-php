@@ -19,7 +19,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$result = $statement->execute();
 	if ($result)
 	{
-		$_SESSION['username'] = $username;
+		$_SESSION[':username'] = $username;
 		//$_SESSION['employee_name'] = $name;
 		header("Location: clock-in-out-page.php");
 		die(); 

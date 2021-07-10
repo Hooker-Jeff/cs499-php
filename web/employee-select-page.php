@@ -35,7 +35,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  
 	  
-	  <ul>
+	  <ul style="list-style-type:none;">
 	  
 	  <?php
 	  
