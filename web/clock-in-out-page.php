@@ -1,9 +1,9 @@
 <?php
 session_start();
-if (isset($_SESSION[':username'])) && isset($_SESSION[':name']))
+if (isset($_SESSION[':username'])) //&& isset($_SESSION['name']))
 {
 	$username = $_SESSION[':username'];
-	$name = $_SESSION[':name'];
+	//$name = $_SESSION['name'];
 }
 else
 {
@@ -34,7 +34,7 @@ else
     ?>
 </p>
 
-	Welcome <?= $name ?> <br /><br /> Please either clock in or clock out with the buttons below<br /><br />
+	Welcome employee number <?= $username ?> <br /><br /> Please either clock in or clock out with the buttons below<br /><br />
 	
 	<form id="ClockInForm" action="clockinfunction.php" method="POST">
 	<input type="hidden" id="clock_in" name="clock_in" value="<?php date_default_timezone_set("America/Los_Angeles");	echo date("l, F jS Y h:i:s A");?>">

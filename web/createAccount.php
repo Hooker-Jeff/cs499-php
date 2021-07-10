@@ -1,40 +1,36 @@
 <?php
 
-session_start();
+	$id = $_POST['employee_id'];
+	$password = $_POST['employee_password'];
+	$name = $_POST['employee_name'];
+
+/*session_start();
 //$badLogin = false;
 if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset($_POST['employee_name'])
 {
 	$id = $_POST['employee_id'];
 	$password = $_POST['employee_password'];
-	$name = $_POST['employee_name'];
+	$name = $_POST['employee_name'];*/
 	
 	require("dbConnect.php");
 	$db = get_db();
+	
+try{
 	$query = 'INSERT INTO naf_employee VALUES (:id, :password, :name)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':id', $id);
 	$statement->bindValue(':password', $password);
 	$statement->bindValue(':name', $name);
-	$result = $statement->execute();
-	if ($result)
-	{
-		//$_SESSION['username'] = $username;
-		//$_SESSION['employee_name'] = $name;
-		header("Location: homepage.php");
-		die(); 
-	}
-	else
-	{
-		//$badLogin = true;
-		header("Location: homepage.php");
-		die();
-	}
+	statement->execute();
+	
 }
-else
+catch (Exception $ex)
 {
-	header("Location: homepage.php");
-	die(); 
+	echo "Error with DB. Details: $ex";
+	die();
 }
+header("Location: homepage.php");
+die();
 
 
 
