@@ -10,7 +10,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'INSERT INTO naf_employee VALUES (employee_id, employee_password, employee_name)';
+	$query = 'INSERT INTO naf_employee VALUES (:id, :password, :name)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':id', $id);
 	$statement->bindValue(':password', $password);

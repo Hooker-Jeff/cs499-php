@@ -2,23 +2,23 @@
 
 session_start();
 $badLogin = false;
-if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
+if (isset($_POST['manager_id']) && isset($_POST['manager_password']))
 {
-	$username = $_POST['employee_id'];
-	$password = $_POST['employee_password'];
+	$username = $_POST['manager_id'];
+	$password = $_POST['manager_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT password FROM naf_employee WHERE username=:username';
+	$query = 'SELECT manager_password FROM manager WHERE manager_id=:username';
 	$statement = $db->prepare($query);
-	$statement->bindValue(':employee_id', $username);
+	$statement->bindValue(':manager_id', $username);
 	$result = $statement->execute();
 	if ($result)
 	{
 		$row = $statement->fetch();
-		$hashedPasswordFromDB = $row['employee_password'];
+		$hashedPasswordFromDB = $row['manager_password'];
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
-			$_SESSION['username'] = $username;
+			$_SESSION['manager_id'] = $username;
 			header("Location: employee-select-page.php");
 			die(); 
 		}
