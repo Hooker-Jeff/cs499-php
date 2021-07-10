@@ -50,13 +50,17 @@ $employee_name = $naf_employee['employee_name'];
 	<body>
 
 	  <?php
-				
-		foreach ($rows as $row)
-		{
 			echo '<h1> Employee Time info for ' . $row['employee_name'] . '</h1><br/>';
 			echo '<table align="center" width="50%" ><tr><th>Employee Name</th>';
 			echo '<th>Clock In</th>';
 			echo '<th>Clock Out</th></tr>';
+			
+		foreach ($rows as $row)
+		{
+			/*echo '<h1> Employee Time info for ' . $row['employee_name'] . '</h1><br/>';
+			echo '<table align="center" width="50%" ><tr><th>Employee Name</th>';
+			echo '<th>Clock In</th>';
+			echo '<th>Clock Out</th></tr>';*/
 			echo '<tr><td>' . $row['employee_name'] . '</td>';
 			echo '<td>' . $row['clock_in'] . '</td>';
 			echo '<td>' . $row['clock_out'] . '</td></tr></table><br/><br/>';
