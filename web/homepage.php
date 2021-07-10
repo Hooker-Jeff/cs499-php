@@ -19,8 +19,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$result = $statement->execute();
 	if ($result)
 	{
-		$row = $statement->fetch();
-		$DBpassword = $row['password'];
+		$DBpassword = $_GET['employee_password'];
 		if (password_verify($password, $DBpassword))
 		{
 			$_SESSION['username'] = $username;
