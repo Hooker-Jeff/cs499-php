@@ -19,8 +19,14 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$result = $statement->execute();
 	if ($result)
 	{
-		$row = $statement->fetch();
-		$hashedPasswordFromDB = $row[':password'];
+		
+		$statement = $db->prepare('SELECT employee_password from naf_employee WHERE employee_id=:username ');
+		$statement->execute(array(':username'=>$username));
+		$output=$statement->fetchAll(PDO::FETCH_ASSOC);
+		$hashed_password=$output[0]["password"];
+		
+		//$row = $statement->fetch();
+		//$hashedPasswordFromDB = $row['employee_password'];
 		if (password_verify($password, $hashedPasswordFromDB))
 		{
 			$_SESSION['username'] = $username;
