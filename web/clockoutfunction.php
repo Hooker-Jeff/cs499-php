@@ -1,7 +1,7 @@
 <?php
 
-$username = $_SESSION['username'];
-$clock_in = $_POST['clock_out'];
+$username = $_POST['username'];
+$clock_out = $_POST['clock_out'];
 
 require("dbConnect.php");
 $db = get_db();

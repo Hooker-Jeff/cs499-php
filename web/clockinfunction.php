@@ -1,6 +1,6 @@
 <?php
 
-$username = $_SESSION['username'];
+$username = $_POST['username'];
 $clock_in = $_POST['clock_in'];
 
 require("dbConnect.php");
