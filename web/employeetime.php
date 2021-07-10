@@ -54,7 +54,7 @@ $employee_name = $naf_employee['employee_name'];
 		foreach ($rows as $row)
 		{
 			echo '<h1> Employee Time info for ' . $row['employee_name'] . '</h1><br/>';
-			echo '<table style="width:50%" ><tr><th>Employee Name</th>';
+			echo '<table align="center" width="50%" ><tr><th>Employee Name</th>';
 			echo '<th>Clock In</th>';
 			echo '<th>Clock Out</th></tr>';
 			echo '<tr><td>' . $row['employee_name'] . '</td>';
@@ -67,6 +67,11 @@ $employee_name = $naf_employee['employee_name'];
 		}
 		
 		?>
+		<form method="post" action="employee-select-page.php">
+			<input type="submit" value="Select another employee">
+		</form>
+		
+		<br/><br/>
 		<form method="post" action="homepage.php">
 			<input type="submit" value="Return to Homepage">
 		</form>
