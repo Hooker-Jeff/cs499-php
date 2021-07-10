@@ -53,6 +53,7 @@ else
 
 	<input type="submit" value="Clock Out" />
 
+
 	</form> 
 	
 	
