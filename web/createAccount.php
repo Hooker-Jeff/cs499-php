@@ -21,7 +21,7 @@ try{
 	$statement->bindValue(':id', $id);
 	$statement->bindValue(':password', $password);
 	$statement->bindValue(':name', $name);
-	statement->execute();
+	$statement->execute();
 	
 }
 /*catch (Exception $ex)
