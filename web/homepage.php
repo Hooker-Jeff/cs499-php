@@ -22,18 +22,15 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		//$row = $statement->fetch();
 		//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 		//if (password_verify($password, $hashedPassword))
-			
-		$check = mysql_query("SELECT :username, :password FROM naf_employee WHERE employee_id = '" . $username . "' && employee_password = '" . $password . "'");
-		if ($check && mysql_num_rows($check) > 0)
-		{
+		//{
 			$_SESSION[':username'] = $username;
 			header("Location: clock-in-out-page.php");
 			die();
-		}
-		else
-		{
-			$badLogin = true;
-		}
+		//}
+		//else
+		//{
+		//	$badLogin = true;
+		//}
 	}
 		
 	else
