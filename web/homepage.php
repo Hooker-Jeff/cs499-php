@@ -45,12 +45,12 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		//{
 		//	$badLogin = true;
 		//}
-	}
+	}*/
 		
 	else
 	{
 		$badLogin = true;
-	}*/
+	}
 
 	
 }
