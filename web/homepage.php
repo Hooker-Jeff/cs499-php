@@ -23,7 +23,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 		//if (password_verify($password, $hashedPassword))
 			
-		$check = mysql_query("SELECT :username, :password FROM naf_employee WHERE employee_id = '".$username."' && employee_password = '".$password."'");
+		$check = mysql_query("SELECT :username, :password FROM naf_employee WHERE employee_id = '" . $username . "' && employee_password = '" . $password . "'");
 		if ($check && mysql_num_rows($check) > 0)
 		{
 			$_SESSION[':username'] = $username;
