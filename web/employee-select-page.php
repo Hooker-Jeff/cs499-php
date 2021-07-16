@@ -47,7 +47,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  {
 		  $employee_id = $employee['employee_id'];
 		  $employee_name = $employee['employee_name'];
-		  echo "<a href='employeetime.php?employee_id=$employee_id'>$employee_name</a>";
+		  echo "<a href=#'employeetime.php?employee_id=$employee_id'>$employee_name</a>";
 		  //echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
 	  }
 	  
