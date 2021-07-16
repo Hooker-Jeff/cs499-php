@@ -17,7 +17,25 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$statement->bindValue(':password', $password);
 	//$statement->bindValue('employee_name', $name);
 	$result = $statement->execute();
+	
 	if ($result)
+	{
+		$row = $statement->fetch();
+		$hashedPasswordFromDB = $row['employee_password'];
+		if (password_verify($password, $hashedPasswordFromDB))
+		{
+			$_SESSION['employee_id'] = $username;
+			header("Location: clock-in-out-page.php");
+			die(); 
+		}
+		else
+		{
+			$badLogin = true;
+		}
+	}
+	
+	
+	/*if ($result)
 	{
 		//$row = $statement->fetch();
 		//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
@@ -36,7 +54,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	else
 	{
 		$badLogin = true;
-	}
+	}*/
 
 	
 }
