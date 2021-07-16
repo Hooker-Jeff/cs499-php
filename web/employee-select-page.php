@@ -26,6 +26,7 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	    * {
 		  text-align: center;
 		}
+		.show {display: block;}
 	</style>
 	</head>
 
@@ -35,20 +36,32 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  
 	  
-	  <ul style="list-style-type:none;">
+	  <!--<ul style="list-style-type:none;">-->
 	  
+	  <div class="dropdown">
+		<button onclick="select()">Select Employee</button>
+		<div id="employees">
 	  <?php
 	  
 	  foreach($rows as $employee)
 	  {
 		  $employee_id = $employee['employee_id'];
 		  $employee_name = $employee['employee_name'];
-		  echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
+		  echo "<a href='employeetime.php?employee_id=$employee_id'>$employee_name</a>";
+		  //echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
 	  }
 	  
 	  ?>
+		</div>
 	  
-	  </ul>
+	  <!--</ul>-->
+	  </div>
+	  
+	  <script>
+	  function select(){
+		  document.getElementById("employees").classList.toggle("show");
+	  }
+	  </script>
 	  
 	  <br/><br/>
 	  <form method="post" action="homepage.php">

@@ -16,11 +16,11 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']) && isset(
 	$db = get_db();
 	
 try{
-	$query = 'INSERT INTO naf_employee VALUES (:id, :password, :name)';
+	$query = 'INSERT INTO naf_employee VALUES (:id, :name, :password)';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':id', $id);
-	$statement->bindValue(':password', $password);
 	$statement->bindValue(':name', $name);
+	$statement->bindValue(':password', $password);
 	$statement->execute();
 	
 }
