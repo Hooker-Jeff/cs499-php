@@ -34,17 +34,17 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	if ($result)
 	{
 		//$row = $statement->fetch();
-		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-		if (password_verify($password, $hashedPassword))
-		{
+		//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+		//if (password_verify($password, $hashedPassword))
+		//{
 			$_SESSION[':username'] = $username;
 			header("Location: clock-in-out-page.php");
 			die();
-		}
-		else
-		{
-			$badLogin = true;
-		}
+		//}
+		//else
+		//{
+		//	$badLogin = true;
+		//}
 	}
 		
 	else
@@ -79,7 +79,7 @@ if ($badLogin)
 <br />
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="homepage.php" method="POST">
+<form id="mainForm" action="clock-in-out-page.php" method="POST">
 
 	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
 	<label for="employee_id">Employee ID</label>

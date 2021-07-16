@@ -57,7 +57,7 @@ if ($badLogin)
 
 <h1>Please sign in below with your manager credentials:</h1>
 
-<form id="mainForm" action="managerhomepage.php" method="POST">
+<form id="mainForm" action="employee-select-page.php" method="POST">
 
 	<input type="text" id="manager_id" name="manager_id" placeholder="Manager ID">
 	<label for="manager_id">Manager ID</label>
