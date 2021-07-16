@@ -79,7 +79,7 @@ if ($badLogin)
 <br />
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="clock-in-out-page.php" method="POST">
+<form id="mainForm" action="homepage.php" method="POST">
 
 	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
 	<label for="employee_id">Employee ID</label>
