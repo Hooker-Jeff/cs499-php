@@ -11,7 +11,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$query = 'SELECT employee_password FROM naf_employee WHERE employee_id = :username ';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
-	//$statement->bindValue(':password', $password);
+	$statement->bindValue(':password', $password);
 	//$statement->bindValue('employee_name', $name);
 	$result = $statement->execute();
 	/*if ($result)
@@ -79,7 +79,7 @@ if ($badLogin)
 <br />
 <h1>Please sign in below:</h1>
 
-<form id="mainForm" action="clock-in-out-page.php" method="POST">
+<form id="mainForm" action="homepage.php" method="POST">
 
 	<input type="text" id="employee_id" name="employee_id" placeholder="Employee ID">
 	<label for="employee_id">Employee ID</label>
