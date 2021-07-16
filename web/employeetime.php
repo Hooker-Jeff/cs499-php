@@ -50,7 +50,7 @@ $employee_name = $naf_employee['employee_name'];
 	<body>
 
 	  <?php
-			echo '<h1> Employee Time info for ' . $employee_name . '</h1><br/>';
+			echo '<h1> Employee Time info' . $employee_name . '</h1><br/>';
 			echo '<table align="center" width="50%" ><tr><th>Employee Name</th>';
 			echo '<th>Clock In</th>';
 			echo '<th>Clock Out</th></tr>';
