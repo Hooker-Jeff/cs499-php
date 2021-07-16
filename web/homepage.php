@@ -8,13 +8,13 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	$password = $_POST['employee_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT employee_password FROM naf_employee WHERE employee_id=:username ';
+	$query = 'SELECT employee_password FROM naf_employee WHERE employee_id = :username ';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':username', $username);
 	//$statement->bindValue(':password', $password);
 	//$statement->bindValue('employee_name', $name);
 	$result = $statement->execute();
-	if ($result)
+	/*if ($result)
 	{
 		$row = $statement->fetch();
 		$hashedPasswordFromDB = $row['employee_password'];
@@ -28,24 +28,24 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 		{
 			$badLogin = true;
 		}
-	}
+	}*/
 	
 	
-	/*if ($result)
+	if ($result)
 	{
 		//$row = $statement->fetch();
-		//$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-		//if (password_verify($password, $hashedPassword))
-		//{
+		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+		if (password_verify($password, $hashedPassword))
+		{
 			$_SESSION[':username'] = $username;
 			header("Location: clock-in-out-page.php");
 			die();
-		//}
-		//else
-		//{
-		//	$badLogin = true;
-		//}
-	}*/
+		}
+		else
+		{
+			$badLogin = true;
+		}
+	}
 		
 	else
 	{

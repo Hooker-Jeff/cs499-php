@@ -8,7 +8,7 @@ if (isset($_POST['manager_id']) && isset($_POST['manager_password']))
 	$password = $_POST['manager_password'];
 	require("dbConnect.php");
 	$db = get_db();
-	$query = 'SELECT manager_password FROM manager WHERE manager_id=:username';
+	$query = 'SELECT manager_password FROM manager WHERE manager_id = :username';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':manager_id', $username);
 	$result = $statement->execute();
