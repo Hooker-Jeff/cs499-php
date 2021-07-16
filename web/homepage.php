@@ -9,7 +9,7 @@ if (isset($_POST['employee_id']) && isset($_POST['employee_password']))
 	require("dbConnect.php");
 	$db = get_db();
 	
-	$query = 'SELECT :password FROM naf_employee WHERE employee_id=:username ';
+	$query = 'SELECT employee_password FROM naf_employee WHERE employee_id=:username ';
 			  //UNION SELECT employee_name FROM naf_employee WHERE employee_id=:username ';
 			  
 	$statement = $db->prepare($query);
