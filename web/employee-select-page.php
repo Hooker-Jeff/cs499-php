@@ -36,26 +36,24 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	  
 	  
 	  
-	  <!--<ul style="list-style-type:none;">-->
+	  <ul style="list-style-type:none;">
 	  
-	  <div class="dropdown">
+	  <!--<div class="dropdown">
 		<button onclick="select()">Select Employee</button>
-		<div id="employees">
+		<div id="employees">-->
 	  <?php
 	  
 	  foreach($rows as $employee)
 	  {
 		  $employee_id = $employee['employee_id'];
 		  $employee_name = $employee['employee_name'];
-		  echo "<a href=#'employeetime.php?employee_id=$employee_id'>$employee_name</a>";
-		  //echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
+		  echo "<li><p><a href='employeetime.php?employee_id=$employee_id'>$employee_name</a></p></li>";
 	  }
 	  
 	  ?>
-		</div>
+		<!--</div>-->
 	  
-	  <!--</ul>-->
-	  </div>
+	  </ul>
 	  
 	  <script>
 	  function select(){
